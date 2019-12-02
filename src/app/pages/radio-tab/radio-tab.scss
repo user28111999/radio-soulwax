@@ -1,0 +1,27 @@
+.container {
+  background: #000;
+
+  & header {
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+      max-width: 25%;
+    }
+
+    select, option {
+      color: black;
+    }
+  }
+
+  & main {
+    background: black;
+    color: whitesmoke;
+  }
+
+  & footer {
+    background: black;
+    color: whitesmoke;
+  }
+}
