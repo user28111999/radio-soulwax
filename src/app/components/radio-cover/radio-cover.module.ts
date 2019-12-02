@@ -9,6 +9,9 @@ import { RadioCoverComponent } from './radio-cover';
     IonicModule,
     CommonModule
   ],
-  declarations: [RadioCoverComponent]
+  declarations: [RadioCoverComponent],
+  exports: [
+    RadioCoverComponent
+  ]
 })
 export class RadioCoverModule {}
