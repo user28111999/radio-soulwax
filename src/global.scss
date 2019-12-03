@@ -15,4 +15,9 @@
   font-family: 'SF Pro';
   src: url(assets/fonts/SF-Pro-Display-Regular.otf) format("opentype");
 }
-  
+
+.hydrated {
+  visibility: inherit;
+  background: #0d0d0d;
+  color: antiquewhite;
+}
