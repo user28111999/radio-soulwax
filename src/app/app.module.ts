@@ -20,8 +20,7 @@ import { env } from './core/environments/environment';
   declarations: [
     AppComponent
   ],
-  entryComponents: [
-  ],
+  entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

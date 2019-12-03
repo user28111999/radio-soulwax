@@ -2,18 +2,11 @@
     <div class="container">
         <header>
             <img class="logo" src="../../../assets/logo.jpg" alt="RADIO SOULWAX" />
-            <div class="filter">
-                <span>Sort by</span> 
-                <select>
-                    <option>Featured</option>
-                    <option>Date</option>
-                </select>
-            </div>
         </header>
         <main>
             <app-radio-cover
-                *ngFor="let radio of (radios$ | async)"
-                [radio]="radio"
+              *ngFor="let radio of (radios$ | async)"
+              [radio]="radio"
             ></app-radio-cover>
         </main>
         <footer>

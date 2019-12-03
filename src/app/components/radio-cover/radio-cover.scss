@@ -1,1 +1,22 @@
+:host {
+  display: inline-table;
+  max-width: 50%;
+}
 
+.container {
+  margin-right: 6%;
+  margin-left: 6%;
+  margin-top: 8%;
+  margin-bottom: 4%;
+  font-family: 'SF Pro', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+
+  & img {
+    border-radius: 4%;
+  }
+
+  & img + span {
+    margin-top: 12px;
+  }
+}

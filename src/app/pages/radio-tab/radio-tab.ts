@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AngularFirestore } from '@angular/fire/firestore';
 
 import { RadioProvider } from 'src/app/core/providers/radio';
 import { Radio } from 'src/app/core/models/radio.model';
@@ -19,5 +18,9 @@ export class RadioTabPage implements OnInit {
 
   ngOnInit() {
     this.radios$ = this.radioProvider.getAll$();
+  }
+
+  sort(event) {
+    console.log(event);
   }
 }
