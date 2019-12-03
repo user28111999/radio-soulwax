@@ -18,6 +18,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'radio/:uid',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../radio-content/radio-content.module').then(m => m.RadioContentPageModule)
+          }
+        ]
+      },
+      {
         path: 'about',
         children: [
           {

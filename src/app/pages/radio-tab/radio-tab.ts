@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { RadioProvider } from 'src/app/core/providers/radio';
@@ -28,7 +29,8 @@ export class RadioTabPage implements OnInit {
   ];
 
   constructor(
-    public radioProvider: RadioProvider
+    public radioProvider: RadioProvider,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -51,7 +53,7 @@ export class RadioTabPage implements OnInit {
     }
   }
 
-  navigate(event) {
-    console.log(event);
+  navigate(radioUid: string) {
+    this.router.navigate(['tabs', 'radio', radioUid]);
   }
 }
