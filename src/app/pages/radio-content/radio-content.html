@@ -1,3 +1,20 @@
-<ion-content>
-  
-</ion-content>
+<ng-container class="black" *ngIf="(radio$ | async) as radio">
+  <header>
+    <iframe 
+      [title]="radio.name" 
+      [src]="sanitizeVimeo(radio.vimeoId)"
+      frameborder="0"
+      controls="true"
+      allowfullscreen
+    ></iframe>
+  </header>
+  <ion-content class="container">
+    <main>
+      <h2>{{radio.name.toUpperCase()}}</h2>
+      <span>{{radio.releaseDate.seconds * 1000 | date:'dd/MM/yyyy' }}</span>
+      <p>{{radio.description}}</p>
+      <span *ngFor="let credit of radio.credits">{{credit}}<br /></span>
+      <br />
+    </main>
+  </ion-content>
+</ng-container>

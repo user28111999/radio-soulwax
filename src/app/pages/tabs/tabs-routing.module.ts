@@ -18,7 +18,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'radio/:uid',
+        path: 'radio/:radioUid',
         children: [
           {
             path: '',
