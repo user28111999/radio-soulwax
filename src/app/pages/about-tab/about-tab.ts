@@ -9,4 +9,7 @@ export class AboutTabPage {
 
   constructor() {}
 
+  openLink(url: string) {
+    window.open(url, '_system');
+  }
 }
