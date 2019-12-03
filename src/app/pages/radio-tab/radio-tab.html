@@ -4,16 +4,14 @@
             <img class="logo" src="../../../assets/logo.jpg" alt="RADIO SOULWAX" />
             <div class="sort-filter">
                 <span>Sort by</span>
-                <select>
-                    <option value="popularity">Popularity</option>
-                    <option value="alphabetical">Alphabetical</option>
-                    <option value="release-date">Release Date</option>
+                <select (change)="sortBy($event.target.value)">
+                    <option *ngFor="let filterType of filterTypes" [value]="filterType.value">{{filterType.value}}</option>
                 </select>
             </div>
         </header>
         <main>
             <app-radio-cover
-              *ngFor="let radio of (radios$ | async).reverse()"
+              *ngFor="let radio of (radios$ | async)"
               [radio]="radio"
               (click)="navigate(radio.uid)"
             ></app-radio-cover>

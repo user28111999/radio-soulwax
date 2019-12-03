@@ -43,7 +43,7 @@ export class RadioProvider {
     .pipe(
       map((sRadios: ServerRadio[]) => sRadios
         .map(sRadio => new Radio(sRadio))
-        .sort((a: Radio, b: Radio) => a.popularity > b.popularity ? 1 : -1)
+        .sort((a: Radio, b: Radio) => a.popularity > b.popularity ? -1 : 1)
       )
     );
   }

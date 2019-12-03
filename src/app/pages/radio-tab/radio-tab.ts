@@ -12,12 +12,43 @@ import { Radio } from 'src/app/core/models/radio.model';
 export class RadioTabPage implements OnInit {
   radios$: Observable<Radio[]>;
 
+  private filterTypes = [
+    {
+      key: 'popularity',
+      value: 'Popularity'
+    },
+    {
+      key: 'alphabetical',
+      value: 'Alphabetical'
+    },
+    {
+      key: 'date',
+      value: 'Release Date'
+    }
+  ];
+
   constructor(
     public radioProvider: RadioProvider
   ) {}
 
   ngOnInit() {
     this.radios$ = this.radioProvider.getAllByPopularity$();
+  }
+
+  sortBy(value: string) {
+    switch(value) {
+      case 'Popularity':
+        this.radios$ = this.radioProvider.getAllByPopularity$();
+        break;
+      case 'Alphabetical':
+        this.radios$ = this.radioProvider.getAll$();
+        break;
+      case 'Release Date':
+        this.radios$ = this.radioProvider.getAllByDate$();
+        break;
+      default:
+        this.radios$ = this.radioProvider.getAllByPopularity$();
+    }
   }
 
   navigate(event) {
