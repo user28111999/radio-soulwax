@@ -20,7 +20,7 @@ export class RadioTabPage implements OnInit {
     this.radios$ = this.radioProvider.getAll$();
   }
 
-  sort(event) {
+  navigate(event) {
     console.log(event);
   }
 }

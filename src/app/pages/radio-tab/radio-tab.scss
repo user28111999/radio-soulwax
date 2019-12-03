@@ -10,8 +10,28 @@
       max-width: 25%;
     }
 
-    select, option {
-      color: black;
+    .sort-filter {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-right: 4%;
+      font-family: 'SF Pro', sans-serif;
+
+      & select, option {
+        border: 0px;
+        outline: 0px;
+        margin-top: 4px;
+        color: whitesmoke;
+        background: black;
+        font-weight: bold;
+      }
+
+      & select {
+        font-size: 18px;
+      }
+
+      & option {
+        font-size: 14px;
+      }
     }
   }
 
