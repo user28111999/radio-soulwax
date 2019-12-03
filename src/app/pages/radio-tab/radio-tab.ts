@@ -14,8 +14,7 @@ export class RadioTabPage implements OnInit {
   radios$: Observable<Radio[]>;
 
   constructor(
-    public radioProvider: RadioProvider,
-    private afs: AngularFirestore
+    public radioProvider: RadioProvider
   ) {}
 
   ngOnInit() {
