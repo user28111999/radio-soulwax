@@ -26,3 +26,4 @@ npm-debug.log*
 /www
 src/app/core/environments/environment.prod.ts
 src/app/core/environments/environment.ts
+scripts/*.json
