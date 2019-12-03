@@ -6,6 +6,7 @@ export interface ServerRadio {
   description: string;
   credits: string[];
   releaseDate: number;
+  popularity: number;
 }
 
 export class Radio {
@@ -16,6 +17,7 @@ export class Radio {
   description: string;
   credits: string[];
   releaseDate: number;
+  popularity: number;
 
   constructor(serverRadio: ServerRadio) {
     Object.assign(this, serverRadio);

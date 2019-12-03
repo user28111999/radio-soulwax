@@ -5,6 +5,7 @@
             <div class="sort-filter">
                 <span>Sort by</span>
                 <select>
+                    <option value="popularity">Popularity</option>
                     <option value="alphabetical">Alphabetical</option>
                     <option value="release-date">Release Date</option>
                 </select>
@@ -12,7 +13,7 @@
         </header>
         <main>
             <app-radio-cover
-              *ngFor="let radio of (radios$ | async)"
+              *ngFor="let radio of (radios$ | async).reverse()"
               [radio]="radio"
               (click)="navigate(radio.uid)"
             ></app-radio-cover>

@@ -23,6 +23,31 @@ export class RadioProvider {
     );
   }
 
+  getAllByDate$(): Observable<Radio[]> {
+    return this.afs.collection<ServerRadio>('radios', ref =>
+      ref.orderBy('releaseDate')
+    )
+    .valueChanges()
+    .pipe(
+      map((sRadios: ServerRadio[]) => sRadios
+        .map(sRadio => new Radio(sRadio))
+      )
+    );
+  }
+
+  getAllByPopularity$(): Observable<Radio[]> {
+    return this.afs.collection<ServerRadio>('radios', ref =>
+      ref.orderBy('popularity')
+    )
+    .valueChanges()
+    .pipe(
+      map((sRadios: ServerRadio[]) => sRadios
+        .map(sRadio => new Radio(sRadio))
+        .sort((a: Radio, b: Radio) => a.popularity > b.popularity ? 1 : -1)
+      )
+    );
+  }
+
   get$(radioUid: string): Observable<Radio> {
     return this._getDoc(radioUid)
     .valueChanges()

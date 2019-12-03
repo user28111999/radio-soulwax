@@ -17,7 +17,7 @@ export class RadioTabPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.radios$ = this.radioProvider.getAll$();
+    this.radios$ = this.radioProvider.getAllByPopularity$();
   }
 
   navigate(event) {
